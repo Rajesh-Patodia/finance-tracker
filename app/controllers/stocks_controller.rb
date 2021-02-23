@@ -20,4 +20,13 @@ class StocksController < ApplicationController
       end
     end
   end
+
+  def update
+    user_id = params[:id]
+    stocks = User.find(user_id).stocks
+    stocks.each do |stock|
+      stock.update(last_price: Stock.price(stock.ticker))
+    end
+    redirect_to my_portfolio_path
+  end
 end

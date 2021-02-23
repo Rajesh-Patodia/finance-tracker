@@ -1,0 +1,10 @@
+
+
+<h1 class="text-center mt-4"><%= @user.first_name %>'s Profile</h1>
+
+
+<% if !@tracked_stocks.empty? %>
+   <%= render 'stocks/list'%>
+<%else%>
+  <p> This user is not traking any stocks.</p>
+<%end%>

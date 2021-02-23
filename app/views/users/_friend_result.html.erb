@@ -1,0 +1,32 @@
+<div class = "results-block">
+  <%= render 'layouts/messages' %>
+</div>
+<% if @friends %>
+  <div class= "card card-header results-block">
+  <table class="col-md-12">
+    <tbody>
+      <% @friends.each do |friend| %>
+      <tr>
+        <td><strong>Email: </strong><%=friend.email %></td>
+        <td><strong>First Name: </strong><%=friend.first_name if friend.first_name%></td>
+        <td><strong>Last Name: </strong><%=friend.last_name if friend.last_name %></td>
+        <td><%= link_to 'View Profile', user_profile_path(friend: friend),
+                                        class: "btn btn-xs btn-success", method: :get %></td>
+        <td><% if !(current_user.is_friend?(friend.id))  %> 
+        <%= link_to 'Start following', friendships_path(user: current_user, friend_id: friend),
+                                        class: "btn btn-xs btn-success", method: :post %>
+        
+        
+        <% else%> 
+          <span class="badge badge-secondary"> 
+            You are already following
+          </span> 
+        <%end%>
+        </td> 
+      </tr>
+      <% end%>
+      
+    </tbody>
+  </table>
+  </div>
+<%end%>

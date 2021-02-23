@@ -1,22 +1,22 @@
 @import 'bootstrap/dist/css/bootstrap';
-
-.search-area{
-  padding-top:50px
+.logout-button{
+  margin-right: 5px;
 }
-
-.no-right-padding {
-  padding-right: 0.5rem !important;
-}
-
 .no-left-padding {
   padding-left: 0 !important;
 } 
+.no-right-padding {
+  padding-right: 0.5rem !important;
+}
+.refresh-link{
+  display: inline;
+}
 .results-block {
   display: inline-block;
   margin-bottom: 1rem;
 }
-.logout-button{
-  margin-right: 5px;
+.search-area{
+  padding-top:50px
 }
 
 .user-name{
